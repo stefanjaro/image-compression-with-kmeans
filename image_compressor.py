@@ -7,7 +7,7 @@ from joblib import dump
 def convert_to_pixel_array(image_link):
 	"""
 	Takes an image link, opens it, and converts it into an array of pixels
-	that can be used by a clustering algorithm
+	that can be used by a clustering algorithm (only works on jpeg right now)
 	"""
 	# import image
 	im = Image.open(image_link)
