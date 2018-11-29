@@ -14,7 +14,6 @@
 # import necessary libraries
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 from PIL import Image
 from sklearn.cluster import KMeans
 from joblib import dump
@@ -71,16 +70,16 @@ dump(compressor, "compressor.joblib")
 pixel_centroid = np.array([list(compressor.cluster_centers_[label]) for label in compressor.labels_])
 
 
-# In[243]:
+# In[245]:
 
 
 # convert the array to an unsigned integer type
 pixel_centroid = pixel_centroid.astype("uint8")
 # reshape this array according to the height and width of our image
-pixel_centroids_reshaped = np.reshape(pixel_centroid, (350, 525, 3), "C")
+pixel_centroids_reshaped = np.reshape(pixel_centroid, (height, width, 3), "C")
 
 
-# In[244]:
+# In[246]:
 
 
 # create the compressed image
